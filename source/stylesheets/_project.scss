@@ -1,0 +1,262 @@
+.modal_control{
+    // margin: 0 50px 50px 50px;
+    margin: 0 35px 50px 50px;
+    max-width: 1440px;
+    @include media-breakpoint-up(xl){
+        margin: 0 auto 50px;
+    }
+    @include media-breakpoint-down(xs) {
+        margin: 0 0px 30px 15px;
+    }
+}
+.modal-content{
+    border-radius: 0.6rem;
+    box-shadow: 0 .25rem .5rem rgba($black, .8);
+}
+.back{
+    position: fixed;
+    // top: 50px;
+    // left: 0px;
+    z-index: 9999;
+    width: 80px;
+    height: 32px;
+    border: 1px solid rgba(255,255,255,1);
+    border-radius: 50px;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    font-size: 1rem;
+    margin-top: 30px;
+    transition: 0.3s;
+    @include media-breakpoint-down(xs) {
+        margin-top: 20px;
+    }
+    letter-spacing: 1px;
+    cursor: pointer;
+    &:hover{
+        color: $title_dark;
+        background: white;
+    }
+}
+.modal_section_setting{
+    width: 100%;
+    padding: 100px 0;
+}
+.modal_title{
+    width: 100%;
+    color: $title_dark;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 40px 0;
+}
+.modal_description{
+    color: $description_dark;
+    font-size: 1.1rem;
+    margin-bottom: 100px;
+}
+#adPlayHero.modal_hero{
+    width: 100%;
+    height: 550px;
+    background: linear-gradient(135deg, #FD910A,#F5BD1D);
+    @include media-breakpoint-down(sm) {
+        height: 750px;
+    }
+    .modal_hero_brand{
+        width: 90%;
+        margin-top: -10px;
+        @include media-breakpoint-down(sm) {
+            margin-top: -30px;
+        }
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+        }
+        // top: 40%;
+    }
+    .modal_hero_subtitle{
+        color: $title_light;
+        font-size: 1.5rem;
+        margin-top: 20px;
+        font-weight: 300;
+        text-align: center;
+    }
+    .modal_hero_img_1{
+        position: absolute;
+        height: 105%;
+        top: -5%;
+        left: 50%;
+        transform: rotate(-20deg);
+        @include media-breakpoint-down(sm) {
+            // width: 60%;
+            height: 160%;
+            transform: rotate(-15deg);
+            top: -30%;
+            left: 40%;
+        }
+    }
+    .modal_hero_img_2{
+        position: absolute;
+        height: 105%;
+        top: 20%;
+        left: 25%;
+        transform: rotate(-20deg);
+        @include media-breakpoint-down(sm) {
+            // width: 60%;
+            height: 160%;
+            transform: rotate(-15deg);
+            top: -10%;
+            left: 20%;
+        }
+    } 
+}
+#adPlayIntro.modal_intro{
+    background: #fff;
+    .modal_title{
+        text-align: left;
+    }
+    img{
+        height: 500px;
+    }
+    @include media-breakpoint-down(sm) {
+        .modal_title{
+            text-align: center;
+        }
+    }
+}
+// Slide Show-----------------------------
+#adPlaySlide.modal_slide_show{
+    background: #f3f3f3;
+    position: relative;
+    height: auto;
+    padding-bottom: 55px;
+    // border: 5px solid green;
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        display: flex;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.3s ease;
+    }
+    .prev{
+        left: 0;
+        border-radius: 0 50% 50% 0;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 50% 0 0 50%;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.6);
+        color: #00CFC5;
+    }
+
+    /* Caption text */
+    .text {
+        color: $title_dark;
+        font-size: 1rem;
+        position: absolute;
+        bottom: -35px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* The dots/bullets/indicators */
+    .slide_dots{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .dot {
+        cursor: pointer;
+        height: 10px;
+        width: 10px;
+        margin: 0 5px;
+        background-color: #888;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .dot_active, .dot:hover {
+        background-color: #00CFC5;
+    }
+    .dot_active{
+        height: 12px;
+        width: 12px;
+    }
+    .first_show{
+        display: block;
+    }
+
+    /* Fading animation */
+    .slide_fade {
+        animation-name: fade;
+        animation-duration: 1s;
+    }
+
+    @keyframes fade {
+        from {opacity: 0.4} 
+        to {opacity: 1}
+    }
+}
+#adPlayPartner.modal_partner{
+    background: #f3f3f3;
+    img{
+        display: block;
+        width: 80%;
+        margin: 30px auto;
+        @include media-breakpoint-down(sm){
+            width: 90%;
+            margin: 10px auto;
+        }
+    }
+}
+#adPlayResponsibility.modal_responsibility{
+    // background: #eee;
+    
+    img{
+        display: block;
+        width: 100%;
+    }
+    .modal_subtitle{
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        color: $description_dark;
+        margin: 30px 0 100px 0;
+        @include media-breakpoint-down(sm) {
+            margin: 20px 0 50px 0;
+        }
+    }
+}
+
+#adPlayReview.modal_review{
+    background: linear-gradient(-45deg, #FD910A,#F5BD1D);
+    .modal_title{
+        color: $title_light;
+    }
+    .modal_description{
+        color: $description_light;
+    }
+}
