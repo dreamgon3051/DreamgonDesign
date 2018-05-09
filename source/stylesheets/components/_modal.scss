@@ -85,11 +85,11 @@
   bottom: 0;
   left: 0;
   z-index: $zindex-modal-backdrop;
-  background-color: rgba(0,0,0,0.7);
+  background-color: black;
 
   // Fade for backdrop
   &.fade { opacity: 0; }
-  &.show { opacity: $modal-backdrop-opacity; }
+  &.show { opacity: 0.6; }
 }
 
 // Modal header

@@ -1,6 +1,6 @@
 # dreamgon
 
-## enviroment
+## environment
 
 ```
 npm install gulp -g

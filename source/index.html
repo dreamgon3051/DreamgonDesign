@@ -3,22 +3,27 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
   <title>Dreamgon Design</title>
+  <!-- icon -->
+  <link rel="apple-touch-icon" href="./images/others/apple-touch-icon.png">
+  <link rel="icon" sizes="192x192" href="./images/others/apple-touch-icon.png">
+  <!-- stylesheets -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/stylesheets/all.css">
-  <script src="/js/csi.min.js"></script>
-  <!-- <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"> -->
+  <link rel="stylesheet" href="./stylesheets/all.css">
+  <script src="./js/csi.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"> -->
 </head>
 <body>
   <div id="wholeRegion">
     <nav id="navBar" class="navbar navbar-expand-md fixed-top navbar-dark navbar_top">
       <!-- <div class="container"> -->
       <a class="navbar-brand ml-4" href="">
-        <img src="/images/lg_brand.png" width="" height="30" class="d-inline-block align-top" alt="">
+        <img src="./images/lg_brand.png" width="" height="30" class="d-inline-block align-top" alt="">
         <!-- <i class="fa fa-thumbs-o-up mx-2" aria-hidden="true"></i> -->
         <!-- <span class="mx-1">Bootstrap</span> -->
       </a>
@@ -41,27 +46,27 @@
     <div class="bg_color"></div>
     <header id="heroSection">
       <div class="heroImg">
-        <div class="container d-flex flex-column justify-content-center align-items-center">
-          <svg version="1.1" id="DG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 500 500"
-            xml:space="preserve" width="400px">
-            <circle id="Oval" stroke-dasharray="950" stroke-dashoffset="950" cx="250" cy="250" r="150">
-              <animate dur="3s" attributeName="stroke-dashoffset" repeatCount="indefinite" to="0" />
-            </circle>
-            <polygon id="Star" stroke-dasharray="1000" stroke-dashoffset="1000" points="250 321.5 165.946709 365.68943 181.999459 272.094715 113.998918 205.81057 207.973354 192.155285 250 107 292.026646 192.155285 386.001082 205.81057 318.000541 272.094715 334.053291 365.68943">
-              <animate dur="3s" attributeName="stroke-dashoffset" repeatCount="1" to="0" fill="freeze" />
-            </polygon>
-            <polygon id="Polygon" stroke-dasharray="500" stroke-dashoffset="500" transform="translate(250.000000, 250.000000) scale(1, -1) translate(-250.000000, -250.000000) "
-              points="250 180 316.573956 228.36881 291.144968 306.63119 208.855032 306.63119 183.426044 228.36881">
-              <animate dur="3s" attributeName="stroke-dashoffset" repeatCount="indefinite" to="0" />
-            </polygon>
-          </svg>
-          <div class="heroTitle">
-            <p>LOGICAL</p>
-            <p>IDAEL</p>
-            <p>BALANCED</p>
-          </div>
+        <div class="img_cover"></div>
+      </div>
+      <div class="hero_logo d-flex flex-column justify-content-center align-items-center">
+        <svg version="1.1" id="DG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 500 500"
+          xml:space="preserve" width="400px">
+          <circle id="Oval" stroke-dasharray="950" stroke-dashoffset="950" cx="250" cy="250" r="150">
+            <animate dur="3s" attributeName="stroke-dashoffset" repeatCount="indefinite" to="0" />
+          </circle>
+          <polygon id="Star" stroke-dasharray="1000" stroke-dashoffset="1000" points="250 321.5 165.946709 365.68943 181.999459 272.094715 113.998918 205.81057 207.973354 192.155285 250 107 292.026646 192.155285 386.001082 205.81057 318.000541 272.094715 334.053291 365.68943">
+            <animate dur="3s" attributeName="stroke-dashoffset" repeatCount="1" to="0" fill="freeze" />
+          </polygon>
+          <polygon id="Polygon" stroke-dasharray="500" stroke-dashoffset="500" transform="translate(250.000000, 250.000000) scale(1, -1) translate(-250.000000, -250.000000) "
+            points="250 180 316.573956 228.36881 291.144968 306.63119 208.855032 306.63119 183.426044 228.36881">
+            <animate dur="3s" attributeName="stroke-dashoffset" repeatCount="indefinite" to="0" />
+          </polygon>
+        </svg>
+        <div class="container heroTitle">
+          <p>DESIGN IS THE WAY TO<br><span style="color:aqua;">UNLOCK </span>MYSTERY.</p>
         </div>
       </div>
+
     </header>
     <section id="aboutSection">
       <div id="selfIntro" class="container">
@@ -90,8 +95,7 @@
             <stop offset="1" stop-color="#00A1BF" />
           </linearGradient>
         </defs>
-        <title>Artboard 1</title>
-        <polygon style="fill: url(#linear-gradient);" points="0 0 0 1460 1280 1350 1280 105 0 0" />
+        <polygon style="fill: url(#linear-gradient);" points="0 0 0 1460 1280 1350 1280 50 0 0" />
         <polygon style="fill: url(#linear-gradient); opacity: 0.8;" points="0 1000 0 4200 1280 4200 1280 1200 0 1000" />
         <!-- <polygon style="fill: url(#linear-gradient)" points="0 1000 0 2530 1280 3300 1280 1000 0 1000" /> -->
       </svg>
@@ -172,18 +176,17 @@
                 <line class="cls-2" x1="398.95" y1="52.29" x2="398.95" y2="201.21" />
               </svg>
             </div>
-            <h4 class="text-center">Product Planning &
-              <br>Data Analysis</h4>
+            <h4 class="text-center">Product Planning &<br>Data Analysis</h4>
             <ul>
               <li>Good at combining the product strategies with business goal.</li>
               <li>Define target audience (TA).</li>
-              <li>Good at abstracting concepts into executables.</li>
+              <li>Good at turning abstract concepts into executable items.</li>
               <li>Execute product optimization with user research and data analysis (certified of GAIQ).</li>
             </ul>
           </div>
           <div class="col-md-4 expertise_card_bound">
             <div class="expertise_img_shade">
-              <img src="/images/img_design.svg" alt="img_design" class="expertise_img_adjust">
+              <img src="./images/img_design.svg" alt="img_design" class="expertise_img_adjust">
             </div>
             <h4 class="text-center pb-3">UI / UX Design</h4>
             <ul>
@@ -196,9 +199,9 @@
           </div>
           <div class="col-md-4 expertise_card_bound">
             <div class="expertise_img_shade">
-              <img src="/images/img_coding.svg" alt="img_coding" class="expertise_img_adjust">
+              <img src="./images/img_coding.svg" alt="img_coding" class="expertise_img_adjust">
             </div>
-            <h4 class="text-center pb-3">Front End Coding</h4>
+            <h4 class="text-center pb-3">Front End Development</h4>
             <ul>
               <li>Build web user interface with major language like HTML5, CSS, JavaScript.</li>
               <li>Responsive design for multi-size devices.</li>
@@ -217,33 +220,33 @@
         <div class="row">
           <div class="col-md-4">
             <div class="project_card" data-toggle="modal" data-target="#adplay">
-              <img src="/images/projectSection_AdPlay_logo.png" alt="AdPlay" class="project_logo_adjust">
+              <img src="./images/lg_projectSection_adplay.png" alt="AdPlay" class="project_logo_adjust">
               <h2 class="text-center">AdPlay</h2>
               <p class="text-center see_more">See Details</p>
-              <p class="text-center brief_descript">Try the App before you download. Experience Apps instantly and safely.</p>
+              <p class="text-center brief_descript">Try the native App before you download. Experience Apps instantly and safely.</p>
             </div>
           </div>
           <div class="col-md-4">
+            <div class="project_card" data-toggle="modal" data-target="#applause">
+              <img src="./images/lg_projectSection_applause.png" alt="Applause" class="project_logo_adjust">
+              <h2 class="text-center">Applause</h2>
+              <p class="text-center see_more">See Details</p>
+              <p class="text-center brief_descript">The well-designed video Ad format which brings stunning conversion rate.</p>
+            </div>
+          </div>          
+          <div class="col-md-4">
             <div class="project_card" data-toggle="modal" data-target="#exampleModal">
-              <img src="/images/projectSection_AdPlay_logo.png" alt="AdPlay" class="project_logo_adjust">
+              <img src="./images/lg_projectSection_qrcool.png" alt="QR Cool" class="project_logo_adjust">
               <h2 class="text-center">QR Cool</h2>
-              <p class="text-center see_more">See Details</p>
-              <p class="text-center brief_descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas?</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="project_card" data-toggle="modal" data-target="#exampleModal">
-              <img src="/images/projectSection_AdPlay_logo.png" alt="AdPlay" class="project_logo_adjust">
-              <h2 class="text-center">BitLedger</h2>
-              <p class="text-center see_more">See Details</p>
-              <p class="text-center brief_descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas?</p>
+              <p class="text-center see_more">under developing</p>
+              <p class="text-center brief_descript">Good things is worth waiting :)</p>
             </div>
           </div>
         </div>
       </div>
       <div data-include="project_1.html"></div>
+      <div data-include="project_2.html"></div>
     </section>
-
     <footer id="contactSection">
       <svg id="bg_3" class="bg_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 250"
         preserveAspectRatio="none">
@@ -253,17 +256,17 @@
         <h1 class="section_title">CONTACT</h1>
         <div class="contact_info d-flex flex-column justify-content-center align-items-center">
           <div class="social_link">
-            <a href="#">
+            <a href="#" target="_blank">
               <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
-            <a href="#">
+            <a href="#" target="_blank">
               <i class="fa fa-linkedin-square" aria-hidden="true"></i>
             </a>
           </div>
-          <div class="phone my-2">Phone: 0921660930</div>
+          <div class="phone my-2">Phone: +886921660930</div>
           <div class="mail my-2">Mail: dreamgon.wu@gmail.com</div>
         </div>
-        <div class="copyright">©2018 Dreamgon Design, All rights reserved.</div>
+        <small class="copyright">©2018 Dreamgon Design, All rights reserved.</small>
       </div>
     </footer>
   </div>
@@ -276,12 +279,12 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
     crossorigin="anonymous"></script> -->
-  <script src="/js/vendor.js"></script>
-  <script type="text/javascript" src="/js/skrollr.min.js"></script>
+  <script type="text/javascript" src="./js/vendor.js"></script>
+  <script type="text/javascript" src="./js/all.js"></script>
+  <!-- <script type="text/javascript" src="./js/skrollr.min.js"></script>
   <script type="text/javascript">
     var s = skrollr.init();
-  </script>
-  <script src="/js/all.js"></script>
+  </script> -->
 </body>
 
 </html>

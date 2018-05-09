@@ -83,9 +83,9 @@ gulp.task('vendorJs', function(){
         './node_modules/jquery/dist/jquery.slim.min.js',
         './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
     ])
-        .pipe($.concat('vendor.js'))
-        // .pipe($.if(options.env === 'production', $.uglify()))
-        .pipe(gulp.dest('./public/js'))
+    .pipe($.concat('vendor.js'))
+    // .pipe($.if(options.env === 'production', $.uglify()))
+    .pipe(gulp.dest('./public/js'))
 })
 
 gulp.task('browserSync', function () {

@@ -1,16 +1,16 @@
 .modal_control{
     // margin: 0 50px 50px 50px;
-    margin: 0 35px 50px 50px;
-    max-width: 1440px;
+    margin: 0 50px 50px;
+    max-width: 1400px;
     @include media-breakpoint-up(xl){
         margin: 0 auto 50px;
     }
     @include media-breakpoint-down(xs) {
-        margin: 0 0px 30px 15px;
+        margin: 0 15px 30px;
     }
 }
 .modal-content{
-    border-radius: 0.6rem;
+    border-radius: 0.3rem;
     box-shadow: 0 .25rem .5rem rgba($black, .8);
 }
 .back{
@@ -39,7 +39,10 @@
 }
 .modal_section_setting{
     width: 100%;
-    padding: 100px 0;
+    padding: 130px 0;
+    @include media-breakpoint-down(sm) {
+    padding: 80px 0;
+    }
 }
 .modal_title{
     width: 100%;
@@ -47,13 +50,26 @@
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
-    margin: 40px 0;
+    margin-bottom: 40px;
 }
 .modal_description{
     color: $description_dark;
     font-size: 1.1rem;
-    margin-bottom: 100px;
+    margin: 0 auto;
+    max-width: 760px;
 }
+.modal_review{
+    .modal_title{
+        color: $title_light;
+    }
+    .modal_description{
+        color: $description_light;
+    }
+    .context_wrap{
+        margin: 30px auto;
+    }
+}
+// ---------AdPlay
 #adPlayHero.modal_hero{
     width: 100%;
     height: 550px;
@@ -62,15 +78,15 @@
         height: 750px;
     }
     .modal_hero_brand{
-        width: 90%;
-        margin-top: -10px;
+        width: 100%;
+        margin-top: 50px;
         @include media-breakpoint-down(sm) {
+            width: 85%;
             margin-top: -30px;
         }
         @include media-breakpoint-down(xs) {
-            width: 100%;
+            width: 90%;
         }
-        // top: 40%;
     }
     .modal_hero_subtitle{
         color: $title_light;
@@ -113,22 +129,32 @@
     .modal_title{
         text-align: left;
     }
-    img{
-        height: 500px;
+    .vmfive_phone{
+        width: 260px;
+    }
+    .video_container{
+        position: absolute;
+        width: 234px;
+        height: 418px;
+        top: 40px;
     }
     @include media-breakpoint-down(sm) {
-        .modal_title{
+        .vmfive_phone{
+            margin-bottom: 50px;
+        }
+        .modal_title,.modal_description{
             text-align: center;
         }
     }
 }
-// Slide Show-----------------------------
 #adPlaySlide.modal_slide_show{
-    background: #f3f3f3;
     position: relative;
-    height: auto;
-    padding-bottom: 55px;
-    // border: 5px solid green;
+    background: linear-gradient(to top,#334,#223);
+    // padding-bottom: 60px;
+    .modal_title{
+        color: $title_light;
+        margin-bottom: 30px;
+    }  
     /* Hide the images by default */
     .mySlides {
         display: none;
@@ -169,7 +195,7 @@
 
     /* Caption text */
     .text {
-        color: $title_dark;
+        color: $description_light;
         font-size: 1rem;
         position: absolute;
         bottom: -35px;
@@ -183,29 +209,29 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        bottom: 0;
+        bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
     }
     .dot {
         cursor: pointer;
-        height: 10px;
-        width: 10px;
+        height: 8px;
+        width: 8px;
         margin: 0 5px;
         background-color: #888;
         border-radius: 50%;
         display: inline-block;
-        transition: background-color 0.6s ease;
+        transition: background 0.6s ease;
     }
 
     .dot_active, .dot:hover {
         background-color: #00CFC5;
     }
     .dot_active{
-        height: 12px;
-        width: 12px;
+        height: 10px;
+        width: 10px;
     }
-    .first_show{
+    .active{
         display: block;
     }
 
@@ -221,7 +247,10 @@
     }
 }
 #adPlayPartner.modal_partner{
-    background: #f3f3f3;
+    background: #fff8e7;
+    .modal_title{
+        margin: 0 auto 60px;
+    }
     img{
         display: block;
         width: 80%;
@@ -233,8 +262,9 @@
     }
 }
 #adPlayResponsibility.modal_responsibility{
-    // background: #eee;
-    
+    .context_wrap{
+        margin: 100px auto;
+    }
     img{
         display: block;
         width: 100%;
@@ -250,13 +280,104 @@
         }
     }
 }
-
 #adPlayReview.modal_review{
     background: linear-gradient(-45deg, #FD910A,#F5BD1D);
-    .modal_title{
-        color: $title_light;
+}
+
+// ******  APPLAUSE  ******
+
+#applauseHero.modal_hero{
+    width: 100%;
+    height: 550px;
+    background: linear-gradient(135deg, #2747FF,#8B16CD);
+    @include media-breakpoint-down(sm) {
+        height: 750px;
     }
-    .modal_description{
-        color: $description_light;
+    .modal_hero_brand{
+        width: 100%;
+        margin-top: 50px;
+        @include media-breakpoint-down(sm) {
+            width: 85%;
+            margin-top: -30px;
+        }
+        @include media-breakpoint-down(xs) {
+            width: 90%;
+        }
+    }
+    .modal_hero_subtitle{
+        color: $title_light;
+        font-size: 1.5rem;
+        margin-top: 20px;
+        font-weight: 300;
+        text-align: center;
+    }
+    .modal_hero_img_1{
+        position: absolute;
+        height: 105%;
+        top: -55%;
+        left: 20%;
+        transform: rotate(45deg);
+        @include media-breakpoint-down(sm) {
+            // width: 60%;
+            height: 140%;
+            transform: rotate(45deg);
+            top: -20%;
+            left: 80%;
+        }
+    }
+    .modal_hero_img_2{
+        position: absolute;
+        height: 105%;
+        top: 10%;
+        left: 50%;
+        transform: rotate(45deg);
+        @include media-breakpoint-down(sm) {
+            // width: 60%;
+            height: 140%;
+            transform: rotate(45deg);
+            top: -40%;
+            left: 20%;
+        }
+    } 
+}
+#applauseResponsibility.modal_responsibility{
+    background: #fff;
+    .context_wrap{
+        margin-top: 100px;
+    }
+}
+#applauseCreativeContent.modal_creativeContent,#applauseUiSet.modal_uiSet,#applauseSpec.modal_spec{
+    img{
+        display: block;
+        width: 100%;
+    }
+    .modal_subtitle{
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        color: $description_dark;
+        margin: 30px 0 100px 0;
+        @include media-breakpoint-down(sm) {
+            margin: 20px 0 50px 0;
+        }
+    }
+}
+#applauseSpec.modal_spec{
+    img{
+        margin: 100px 0;
+        box-shadow: 0 0 .5rem rgba($black, .3);
+    }
+}
+#applauseReview.modal_review{
+    background: linear-gradient(-45deg, #2747FF,#8B16CD);
+}
+#bg_applause{
+    position: absolute;
+    width: 100%;
+    height: 300%;
+    top: 200px;
+    left: 0;
+    @include media-breakpoint-down(sm){
+      top: 100px;
     }
 }
