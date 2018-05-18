@@ -1,24 +1,46 @@
-$(window).scroll(function (evt) {
-    if ($(window).scrollTop() > window.innerHeight) {
-        // $("#navBar").addClass("bg-background-opacity");
-        $(".navbar_top").css("background","rgba(255,255,255,0.8)");
-    }
-    else {
-        // $("#navBar").removeClass("bg-background-opacity");
-        $(".navbar_top").css("background", "rgba(255,255,255,0)");
-        // $(".navbar_top").css("padding", "30px !important");
-    }
+$(document).ready(function(){
+    $(document).scroll(function (e) {
+        if ($(document).scrollTop() > (window.innerHeight - 50)) {
+            $(".navbar_top").css("background", "rgba(255,255,255,0.85)");
+            $(".navbar_top").css("padding", "10px");
+            $("#navBar .navBrand_logo").css("display","block");
+            $("#navBar .navBrand_logoType").css("display", "none");
+        }
+        else {
+            $(".navbar_top").css("background", "rgba(255,255,255,0)");
+            $(".navbar_top").css("padding", "30px 20px 30px 30px");
+            $("#navBar .navBrand_logo").css("display", "none");
+            $("#navBar .navBrand_logoType").css("display", "block");
+        }
+    });
+    $(document).scroll(function (evt) {
+        if ($(document).scrollTop() > 150) {
+            $(".bg_color").css("opacity", "0");
+        }
+        else {
+            $(".bg_color").css("opacity", "1");
+        }
+    });
+    $("#svgNavButton").hover(function(){
+        $(".svgNavButton_bar_2").addClass("svgNavButton_hover");
+    },function () {
+        $(".svgNavButton_bar_2").removeClass("svgNavButton_hover");
+    });
+    setTimeout(function () {
+        $("#svgHeroLogo").hover(function () {
+            $(".svgHeroLogo_path").css("transform", "scale(1.1)");
+        }, function () {
+            $(".svgHeroLogo_path").css("transform", "scale(1)");
+        });
+    }, 5000);
+
+        // $(".svgNavButton_bar_2").css("transform","translateY(10%)");
 });
-$(window).scroll(function (evt) {
-    if ($(window).scrollTop() > 150) {
-        // $(".bg_color").css("background","#FFFFFF");
-        $(".bg_color").css("opacity", "0");
-    }
-    else {
-        // $(".bg_color").css("background", "#00CFC5");
-        $(".bg_color").css("opacity", "1");
-    }
-});
+
+
+// var myPath = document.getElementById("svgHeroLogo_p1");
+// var length = myPath.getTotalLength();
+// console.log(length);
 
 
 // Slide Show -----------------------------

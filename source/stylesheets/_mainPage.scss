@@ -1,16 +1,18 @@
 $background: white;
-$major_gradient: linear-gradient(to right,#00CFC5,#00B1CF);
+$major_color: #00A6F1;
+$major_gradient_vertical: linear-gradient(to bottom,#00B4F8,#0074D8);
+$major_gradient_horizontal: linear-gradient(to right,#00B4F8,#0074D8);
 $title_dark: rgba(68,68,76,1);
 $description_dark: rgba(68,68,76,0.8);
 $title_light: white;
-$description_light: rgba(255,255,255,0.8);
+$description_light: rgba(255,255,255,0.9);
 
 
 @mixin bound(){
   border: solid 1px red;
 }
 @mixin text_gradient(){
-  background: $major_gradient;
+  background: $major_gradient_horizontal;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -41,8 +43,6 @@ $description_light: rgba(255,255,255,0.8);
 *{
   // border: solid 1px red;
   position: relative;
-  padding: 0;
-  margin: 0;
 }
 
 // @font-face {
@@ -56,26 +56,25 @@ $description_light: rgba(255,255,255,0.8);
 
 
 .bg_color{
-  // background: #00CFC5;
+  // border: 1px solid red;
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0%;
+  top: -10%;
   left: 0%;
-  background: $major_gradient;
+  background: $major_gradient_horizontal;
   opacity: 1;
   transition: 1s;
   //transition not support linear-gradient transition, so workaround with opacity
 }
 
 h1,h2,h3,h4,h5{
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .navbar_top{
   // background: transparent;
-  padding: 30px 20px 30px 30px !important;
-  
+  padding: 30px 20px 30px 30px;
 }
 
 .section_title{
@@ -91,46 +90,56 @@ h1,h2,h3,h4,h5{
 
 // section--------------------------
 
-#wholeRegion{
-  height: 100%;
-  overflow: hidden;
-  //to mask svg background
-}
+// #cutSvgRegion{
+//   overflow: hidden;
+//   //to mask svg background
+// }
 
 #navBar{
-  transition: 1s;
+  transition: 0.4s;
+  img{
+    fill: $major_gradient_vertical;
+  }
   a{
     letter-spacing: 1px;
     font-weight: 500;
     @include text_gradient();
+    // color: $major_color;
     &:hover{
-      background: linear-gradient(to right ,orange,#ee8833);
+      // color: rgb(240, 139, 6);
+      background: linear-gradient(to right ,rgb(255, 183, 0),#ee8833);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
   }
+  svg *{
+    transition: 0.4s;
+  }
+  .svgNavButton_hover{
+    transform: translateY(10%);
+  }
 }
-
 #heroSection{
-  height: calc(100vh); 
+  height: 100vh; 
   .heroImg{
-    filter: grayscale(100%);
     margin: 0.5rem;
     height: calc(100vh - 1rem);
-    border-radius: 3px;
+    // border-radius: 5px;
+    // overflow: hidden;
     @include media-breakpoint-up(xl){
       margin: 0.75rem;
       height: calc(100vh - 1.5rem);
     }
     background-image: url("../images/bg_profile.jpg");
     background-size: cover;
-    // background-color:rgba(0,0,0,0.7);
     background-attachment: fixed;
+    filter: grayscale(100%);
     .img_cover{
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.7);
+
     }
   }
   .hero_logo{
@@ -138,32 +147,96 @@ h1,h2,h3,h4,h5{
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
-  // #DG{
-  //   @include bound();
-  // }
-  svg{
-    fill: rgba(255,255,255,0.1);
-    stroke: white;
-    stroke-width: 4;
-    stroke-linecap: round;
+  .logo_wrap{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-40%);
   }
-  .heroTitle *{
+  .heroTitle{
     color: $title_light;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 600;
     letter-spacing: 1px;
-    margin-top: -20px;
+    margin: 30px -10px 0;
     @include media-breakpoint-up(xl){
       font-size: 2rem;
+    }
+    p{
+      opacity: 0;
+      animation-delay: 2s;
+      animation-name: fadeIn;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+    }
+  }
+  // svgHeroLogo animation
+  .svgHeroLogo_circle {
+    stroke-dasharray: 3142;
+    stroke-dashoffset: 3142;
+    fill-opacity: 0;
+    fill: url(#svgHeroLogo_fill);
+    stroke: url(#svgHeroLogo_fill);
+    stroke-width: 4;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.2, 0.25, 0.58, 0.94);
+    animation-delay: 1s, 3s, 3s;
+    animation-name: draw, fadeStroke, fillIn;
+    animation-duration: 2s, 1s, 1.5s;
+  }
+
+  .svgHeroLogo_path {
+    transition: 0.3s;
+    transform-origin: center;
+    stroke-dasharray: 1689;
+    stroke-dashoffset: 1689;
+    // 2689
+    fill-opacity: 0;
+    fill: url(#svgHeroLogo_fill_2);;
+    stroke: url(#svgHeroLogo_fill);
+    stroke-width: 4;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.2, 0.25, 0.58, 0.94);
+    animation-delay: 1s, 3s, 3s;
+    animation-name: draw, fadeStroke, fillIn;
+    animation-duration: 2s, 1s, 1.5s;
+  }
+
+  @keyframes draw {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes fadeStroke {
+    100% {
+      stroke-opacity: 0;
+    }
+  }
+  @keyframes fillIn {
+    0% {
+      fill-opacity: 0;
+    }
+    100% {
+      fill-opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 }
 
 #aboutSection{
-  padding: 250px 0;
+  padding: 200px 0;
   @include media-breakpoint-down(sm){
     padding: 150px 0 50px 0;
   }
@@ -191,14 +264,15 @@ h1,h2,h3,h4,h5{
       color: $description_dark;
     }
   }
-  #bg_1{
+  #bgSvgAboutProject{
     position: absolute;
     width: 100%;
-    height: 200%;
-    top: 550px;
+    height: 120%;
+    top: 500px;
     left: 0;
     @include media-breakpoint-down(sm){
       top: 670px;
+      // height: 120%;
     }
   }
   #expertise{
@@ -207,26 +281,41 @@ h1,h2,h3,h4,h5{
       position: absolute;
       width: 70%;
       top: 53%;
-      left: 50%;
-      transform: translate(-50%,-50%);
+      left: 10%;
+      transform: translateY(-50%);
+      animation-name: floating;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
     }
     .expertise_card_bound{
       @include media-breakpoint-down(sm) {
         margin-top: 60px;
       }
     }
-    .expertise_img_shade{
+    .expertise_img_bound{
       width: 80%;
       padding-top: 80%;
       margin: 0 auto;
       // background: linear-gradient(270deg,rgba(68,68,76,0.6),rgba(68,68,76,0.8));
-      background: rgba(68,68,76,0.6);
-      border-radius: 50%;
       overflow: hidden;
-      @include media-breakpoint-down(sm) {
+      .expertise_img_shade{
+        position: absolute;
         width: 60%;
-        padding-top: 60%;
+        height: 60%;
+        right: 10%;
+        bottom: 0;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.3);
+        animation-name: floating_2;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
       }
+      // @include media-breakpoint-down(sm) {
+      //   width: 60%;
+      //   padding-top: 60%;
+      // }
     }
     h4{
       margin: 50px auto 25px;
@@ -234,26 +323,40 @@ h1,h2,h3,h4,h5{
     }
     li{
       color: $description_light;
-      margin: 10px 10px;
+      margin: 15px 0px;
       font-size: 1.1rem;
       font-weight: 300;
+      @include media-breakpoint-up(lg) {
+        margin: 20px 20px;
+      }
+
+    }
+    @keyframes floating {
+      from { transform: translateY(-50%); }
+      65%  { transform: translateY(-35%); }
+      to   { transform: translateY(-50%); }    
+    }
+    @keyframes floating_2 {
+      from { transform: translateY(-10%); }
+      50%  { transform: translateY(0%); }
+      to   { transform: translateY(-10%); }    
     }
   }
 }
 
 #projectSection{
-  padding: 250px 0;
-  #bg_2{
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0; 
-  }
+  padding: 150px 0 250px;
+  // #svgProjectBottom{
+  //   position: absolute;
+  //   width: 100%;
+  //   bottom: 0;
+  //   left: 0; 
+  // }
   // white triangle at section bottom 
   .project_card{
     height: 340px; 
     width: 100%;
-    background: rgba(0, 30, 50, 0.6); 
+    background: rgba(16, 47, 73, 0.8); 
     // border-bottom: 5px solid white;
     border-radius: 3px;
     transition: 0.3s;
@@ -263,7 +366,7 @@ h1,h2,h3,h4,h5{
     cursor: pointer;
     &:hover{
       // background: linear-gradient(135deg,rgba(0,70,90,0.9),rgba(0,60,80,0.9));
-      background: rgba(10, 20, 30, 0.8);
+      background: rgba(16, 47, 73, 1);
       border-bottom: 5px solid white;
       border-radius: 7px;
       box-shadow: 0px 5px 15px rgba(30, 30, 30, 0.7);
@@ -278,7 +381,7 @@ h1,h2,h3,h4,h5{
         top: 20%;
       }      
       .see_more{
-        color: #00CFC5;
+        color: $major_color;
       }
       .brief_descript{
         opacity: 1;
@@ -295,10 +398,12 @@ h1,h2,h3,h4,h5{
     transition: 0.3s;
   }
   h2{
-    font-size: 2rem;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
     position: absolute;
     width: 80%;
-    top: 50%;
+    top: 54%;
     left: 50%;
     transform: translate(-50%);
     transition: 0.3s;
@@ -316,7 +421,7 @@ h1,h2,h3,h4,h5{
   .brief_descript{
     position: absolute;
     width: 80%;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%);
     opacity: 0;
@@ -327,10 +432,10 @@ h1,h2,h3,h4,h5{
 
 #contactSection{
   height: 100vh;
-  background: $major_gradient;
+  background: $major_gradient_vertical;
   overflow: hidden;
   //hide the upper bound shadow
-  #bg_3{
+  #svgContactTop{
     position: absolute;
     width: 100%;
     height: 45%;
@@ -354,7 +459,7 @@ h1,h2,h3,h4,h5{
     @include text_gradient();
   }
   .fa{
-    font-size: 24px;
+    font-size: 1.5rem;
     color: $title_light;
     margin: 20px;
   }
@@ -368,6 +473,7 @@ h1,h2,h3,h4,h5{
       color: $title_light;
       min-width: 300px;
       text-align: center;
+      font-size: 1rem;
       font-weight: 200;
     }
   }
@@ -380,7 +486,7 @@ h1,h2,h3,h4,h5{
     color: $title_light;
     min-width: 300px;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 200;
   }
 }
