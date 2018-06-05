@@ -5,7 +5,7 @@ $major_gradient_horizontal: linear-gradient(to right,#00B4F8,#0074D8);
 $title_dark: rgba(68,68,76,1);
 $description_dark: rgba(68,68,76,0.8);
 $title_light: white;
-$description_light: rgba(255,255,255,0.9);
+$description_light: white;
 
 
 @mixin bound(){
@@ -68,9 +68,9 @@ $description_light: rgba(255,255,255,0.9);
   //transition not support linear-gradient transition, so workaround with opacity
 }
 
-h1,h2,h3,h4,h5{
-  font-weight: 500;
-}
+// h1,h2,h3,h4,h5{
+//   font-weight: 200;
+// }
 
 .navbar_top{
   // background: transparent;
@@ -83,8 +83,18 @@ h1,h2,h3,h4,h5{
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 3px;
-  @include media-breakpoint-down(sm){
-    text-align: center;
+  @include media-breakpoint-down(xs){
+    font-size: 2.2rem;
+  }
+}
+.section_description{
+  color: white;
+  margin: -70px 0 100px;
+  // font-weight: 300;
+  font-size: 1.3rem;
+  @include media-breakpoint-down(xs){
+    font-size: 1.1rem;
+    margin: -70px 0 50px;
   }
 }
 
@@ -117,14 +127,18 @@ h1,h2,h3,h4,h5{
     transition: 0.4s;
   }
   .svgNavButton_hover{
-    transform: translateY(10%);
+    transform: translateY(20%);
+    // transform: rotate(45deg);
   }
 }
 #heroSection{
   height: 100vh; 
+  border: 1px solid rgba(255,255,255,0); 
+  // that's really a strange bug that need to set border to adjust the section region to the right position,
+  // or the contact section bottom will appear a gap with same height of the margin.
   .heroImg{
-    margin: 0.5rem;
-    height: calc(100vh - 1rem);
+    margin: 0.7rem;
+    height: calc(100vh - 1.4rem);
     // border-radius: 5px;
     // overflow: hidden;
     @include media-breakpoint-up(xl){
@@ -134,12 +148,11 @@ h1,h2,h3,h4,h5{
     background-image: url("../images/bg_profile.jpg");
     background-size: cover;
     background-attachment: fixed;
-    filter: grayscale(100%);
+    // filter: grayscale(100%);
     .img_cover{
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.7);
-
+      background: rgba(0,0,0,0.6);
     }
   }
   .hero_logo{
@@ -156,14 +169,23 @@ h1,h2,h3,h4,h5{
     transform: translateY(-40%);
   }
   .heroTitle{
-    color: $title_light;
+    // color: $title_light;
+    color: #00B4F8;
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 600;
-    letter-spacing: 1px;
-    margin: 30px -10px 0;
+    letter-spacing: 0.5px;
+    margin: 30px -80px 0;
     @include media-breakpoint-up(xl){
       font-size: 2rem;
+    }
+    @include media-breakpoint-down(sm){
+      margin: 30px -30px 0;
+      font-size: 1.6rem;
+    }
+    @include media-breakpoint-down(xs){
+      margin: 30px 0 0;
+      font-size: 1.4rem;
     }
     p{
       opacity: 0;
@@ -180,11 +202,11 @@ h1,h2,h3,h4,h5{
     fill-opacity: 0;
     fill: url(#svgHeroLogo_fill);
     stroke: url(#svgHeroLogo_fill);
-    stroke-width: 4;
+    stroke-width: 5;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.2, 0.25, 0.58, 0.94);
-    animation-delay: 1s, 3s, 3s;
+    animation-delay: 0.3s, 2s, 2s;
     animation-name: draw, fadeStroke, fillIn;
     animation-duration: 2s, 1s, 1.5s;
   }
@@ -198,11 +220,11 @@ h1,h2,h3,h4,h5{
     fill-opacity: 0;
     fill: url(#svgHeroLogo_fill_2);;
     stroke: url(#svgHeroLogo_fill);
-    stroke-width: 4;
+    stroke-width: 5;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.2, 0.25, 0.58, 0.94);
-    animation-delay: 1s, 3s, 3s;
+    animation-delay: 0.3s, 2s, 2s;
     animation-name: draw, fadeStroke, fillIn;
     animation-duration: 2s, 1s, 1.5s;
   }
@@ -238,7 +260,7 @@ h1,h2,h3,h4,h5{
 #aboutSection{
   padding: 200px 0;
   @include media-breakpoint-down(sm){
-    padding: 150px 0 50px 0;
+    padding: 150px 0 50px;
   }
   #selfIntro{
     .avatar{
@@ -251,16 +273,18 @@ h1,h2,h3,h4,h5{
       @include media-breakpoint-down(xs){
         transform: translateY(-45px);
       }
-      // animation: bounceIn 1s forwards ease-out;
+      // animation: 0.5s forwards cubic-bezier(.09,.5,.72,.98);
+      animation: 0.7s forwards cubic-bezier(0,1.06,.72,.98);
       // filter: drop-shadow( 0px 0px 5px rgba(0,0,0,0.3) );
     }
     .intro_title{
+      font-size: 2.2rem;
       font-weight: 600;
       color: $title_dark;
     }
     .intro_desc{
       font-size: 1.1rem;
-      font-weight: 300;
+      // font-weight: 300;
       color: $description_dark;
     }
   }
@@ -299,7 +323,7 @@ h1,h2,h3,h4,h5{
       margin: 0 auto;
       // background: linear-gradient(270deg,rgba(68,68,76,0.6),rgba(68,68,76,0.8));
       overflow: hidden;
-      .expertise_img_shade{
+      .expertise_img_shape{
         position: absolute;
         width: 60%;
         height: 60%;
@@ -317,13 +341,16 @@ h1,h2,h3,h4,h5{
       //   padding-top: 60%;
       // }
     }
-    h4{
-      margin: 50px auto 25px;
+    h2{
+      font-size: 1.4rem;
+      margin: 60px auto 40px;
       color: $title_light;
+      text-align: center;
+      font-weight: 500;
     }
     li{
       color: $description_light;
-      margin: 15px 0px;
+      margin: 10px 0px;
       font-size: 1.1rem;
       font-weight: 300;
       @include media-breakpoint-up(lg) {
@@ -360,6 +387,7 @@ h1,h2,h3,h4,h5{
     // border-bottom: 5px solid white;
     border-radius: 3px;
     transition: 0.3s;
+    animation: 1s forwards ease-in;
     @include media-breakpoint-down(sm) {
       margin-top: 60px;
     }
@@ -375,7 +403,7 @@ h1,h2,h3,h4,h5{
         max-width: 70%;
         max-height: 70%;
         // max-height: 30%; 
-        opacity: 0.3;
+        opacity: 0.2;
       }
       h2{
         top: 20%;
@@ -408,6 +436,9 @@ h1,h2,h3,h4,h5{
     transform: translate(-50%);
     transition: 0.3s;
     color: $title_light;
+    @include media-breakpoint-only(md){
+      font-size: 1.8rem;
+    }
   }
   .see_more{
     position: absolute;
@@ -417,6 +448,7 @@ h1,h2,h3,h4,h5{
     transform: translate(-50%);
     transition: 0.3s;
     color: rgba(255,255,255,0.6);
+    font-weight: 300;
   }
   .brief_descript{
     position: absolute;
@@ -427,6 +459,7 @@ h1,h2,h3,h4,h5{
     opacity: 0;
     transition: 0.3s;
     color: $title_light;
+    font-weight: 300;
   }
 }
 
@@ -440,13 +473,11 @@ h1,h2,h3,h4,h5{
     width: 100%;
     height: 45%;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translate(-50%);
     @include media-breakpoint-down(sm){
       width: 180%;
       height: 50%;
-      top: 0;
-      left: 50%;
-      transform: translate(-50%);
     }
     filter: drop-shadow( 0px 3px 7px rgba(2,36,41,0.5)); 
   }
@@ -474,7 +505,7 @@ h1,h2,h3,h4,h5{
       min-width: 300px;
       text-align: center;
       font-size: 1rem;
-      font-weight: 200;
+      font-weight: 300;
     }
   }
   .copyright{
@@ -487,10 +518,6 @@ h1,h2,h3,h4,h5{
     min-width: 300px;
     text-align: center;
     font-size: 0.8rem;
-    font-weight: 200;
+    font-weight: 300;
   }
 }
-
-
-
-

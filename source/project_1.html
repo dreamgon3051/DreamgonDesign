@@ -11,7 +11,7 @@
                     <div class="row" style="height: 100%;">
                         <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
                             <img src="./images/project_adplay/lg_adplay.png" alt="" class="modal_hero_brand">
-                            <p class="modal_hero_subtitle">Instantly trial before download.</p>
+                            <p class="modal_hero_subtitle">Give it a real trial before download.</p>
                         </div>
                         <div class="col-md-6">
                             <img src="./images/project_adplay/img_hero_horidashi.png" alt="" class="modal_hero_img_1">
@@ -33,10 +33,12 @@
                         </div>
                         <div class="col-md-6 d-flex flex-column justify-content-center">
                             <h3 class="modal_title">What's AdPlay?</h3>
-                            <p class="modal_description">AdPlay is a brand-new advertising format.
-                                <br>Unlike traditional Ad(i.e. image or video content), user can try the app before they decide
+                            <p class="modal_description">AdPlay brings a great approach to fit users' need before they download Apps. Having trials before download is a natural need that every user requires.
+                                Via cloud virtualization and streaming technology, we achieved making users instantly and safely try the native App without any preload. 
+                                <span> (See the live-recording video to learn more.)</span></p>
+                            <!-- <p class="modal_description">AdPlay is a brand-new advertising format. Unlike traditional Ad(i.e. image or video content), user can try the app before they decide
                                 to download or even purchase. Therefore, experience the native apps instantly and safely
-                                without any pre-install is the Core Values of AdPlay.</p>
+                                without any pre-install is the Core Values of AdPlay.</p> -->
                         </div>
                     </div>
                 </div>
@@ -44,30 +46,30 @@
             <section id="adPlaySlide" class="modal_slide_show modal_section_setting">
                 <h3 class="modal_title">Showcase</h3>
                 <div class="slide_wrap">
-                    <div class="mySlides slide_fade active">
+                    <div class="mySlides slide_fade show_beginning" name="slide0">
                         <img src="./images/project_adplay/img_showcase_yahoo.png" style="width:100%">
                         <div class="text">Yahoo Game Page (JP)</div>
                     </div>
-                    <div class="mySlides slide_fade">
+                    <div class="mySlides slide_fade" name="slide0">
                         <img src="./images/project_adplay/img_showcase_drBooster.png" style="width:100%">
                         <div class="text">Dr. Booster (TW)</div>
                     </div>
-                    <div class="mySlides slide_fade">
+                    <div class="mySlides slide_fade" name="slide0">
                         <img src="./images/project_adplay/img_showcase_horidashi.png" style="width:100%">
                         <div class="text">Horidashi (JP)</div>
                     </div>
-                    <div class="mySlides slide_fade">
+                    <div class="mySlides slide_fade" name="slide0">
                         <img src="./images/project_adplay/img_showcase_abc.png" style="width:100%">
                         <div class="text">Game Gift (JP)</div>
                     </div>
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <a class="prev" onclick="moveSlides(-1,0)">&#10094;</a>
+                    <a class="next" onclick="moveSlides(1,0)">&#10095;</a>
                 </div>
                 <div class="slide_dots">
-                    <span class="dot dot_active" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot dot_active" name="dot0" onclick="currentSlide(1,0)"></span>
+                    <span class="dot" name="dot0" onclick="currentSlide(2,0)"></span>
+                    <span class="dot" name="dot0" onclick="currentSlide(3,0)"></span>
+                    <span class="dot" name="dot0" onclick="currentSlide(4,0)"></span>
                 </div>
             </section>
             <section id="adPlayPartner" class="modal_partner modal_section_setting">
@@ -75,7 +77,7 @@
                     <h3 class="modal_title">Partnership</h3>
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-10">
-                            <div class="row d-flex justify-content-center">
+                            <div class="row">
                                 <div class="col-sm-4 col-6">
                                     <img src="./images/project_adplay/lg_yahoo.png" alt="">
                                 </div>
@@ -103,14 +105,14 @@
                 <div class="container-fluid">
                     <div class="context_wrap">
                         <h3 class="modal_title">Responsibility</h3>
-                        <p class="modal_description">My work covered the entire product development period, which included concept prototyping and user testing for MVP definition;
-                            UI/UX improvement and data analysis for product optimization. Moreover, execute product and CMS(content management system)
-                            planning to satisfy various customer needs.</p>
+                        <p class="modal_description">As a design director, my duty covered the entire product development period, which included concept prototyping and user testing for MVP definition;
+                            UI/UX improvement and data analysis for product optimization; Moreover, executing product and CMS(content management system)
+                            planning to satisfy various business clients' needs. By the way, Web, Android and iOS SDK solution are also within consideration.</p>
                     </div>
                     <img src="./images/project_adplay/img_useFlow.png" alt="">
-                    <h3 class="modal_subtitle">Use Flow</h3>
+                    <h3 class="modal_subtitle">User Flow</h3>
                     <img src="./images/project_adplay/img_flowChart.png" alt="">
-                    <h3 class="modal_subtitle">Status Flow Planning</h3>
+                    <h3 class="modal_subtitle">Product Functional Flow Chart</h3>
                     <img src="./images/project_adplay/img_dataAnalysis.png" alt="">
                     <h3 class="modal_subtitle">Data Analysis</h3>
                     <img src="./images/project_adplay/img_cmsPlan.png" alt="">
@@ -121,9 +123,9 @@
                 <div class="container-fluid">
                     <div class="context_wrap">
                         <h3 class="modal_title">Review</h3>
-                        <p class="modal_description">AdPlay is a product powered by VMFive, which is also my major duty of creation. I joined product development from the very
-                            beginning. As there's only one designer, I need to take the whole thing about UI/UX design, that was a very precious
-                            experience for me.</p>
+                        <p class="modal_description">AdPlay is a product powered by VMFive, which was my major duty of creation. I joined product development from the very
+                            beginning. As the only designer from starting, I took the whole things about UI/UX design and product evolution, that was a very precious
+                            and complete experience for me.</p>
                     </div>
                 </div>
             </section>
