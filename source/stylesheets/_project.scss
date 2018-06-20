@@ -1,7 +1,10 @@
 // modal settings-----------------
+.modal {
+    -webkit-overflow-scrolling: touch;
+}
 .modal_control{
-    // margin: 0 50px 50px 50px;
-    margin: 0 35px 50px 50px;
+    margin: 0 35px 35px;
+    // margin: 0 35px 50px 50px;
     max-width: 1400px;
     @include media-breakpoint-up(xl){
         margin: 0 auto 50px;
@@ -50,9 +53,13 @@
 .modal_hero_brand{
     width: 100%;
     margin-top: 50px;
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-down(xl) {
+        width: 80%;
+        margin-top: 10px;
+    } 
+    @include media-breakpoint-down(lg) {
         width: 100%;
-        margin-top: 0px;
+        margin-top: 20px;
     }    
     @include media-breakpoint-down(sm) {
         width: 85%;
@@ -87,10 +94,11 @@
     color: $description_dark;
     font-size: 1.1rem;
     line-height: 2rem;
+    // font-weight: 300;
     margin: 0 auto;
     max-width: 760px;
     @include media-breakpoint-down(sm) {
-        font-size: 0.9rem;
+        font-size: 1rem;
         line-height: 1.8rem;
     }
 }
@@ -156,14 +164,22 @@
         position: absolute;
         width: 234px;
         height: 418px;
-        top: 40px;
+        // top: 40px;
+        // top: 50%;
+        transform: translateY(-7px);
+    }
+    @include media-breakpoint-only(md) {
+        .context_wrap{
+            padding-left: 50px;
+        }
     }
     @include media-breakpoint-down(sm) {
-        .vmfive_phone{
-            margin-bottom: 50px;
-        }
+        // .vmfive_phone{
+        //     margin-bottom: 50px;
+        // }
         .modal_title{
             text-align: center;
+            margin-top: 50px;
         }
     }
 }
@@ -267,7 +283,7 @@
     }
 }
 #adPlayPartner.modal_partner{
-    background: #fff8e7;
+    background: #fffbed;
     .modal_title{
         margin: 0 auto 60px;
     }
@@ -372,6 +388,11 @@
         @include media-breakpoint-down(sm) {
             margin: 20px 0 50px 0;
         }
+    }
+}
+.modal_uiSet{
+    img{
+        background: rgba(4, 0, 19, 0.5);
     }
 }
 #applauseSpec.modal_spec{
@@ -554,8 +575,8 @@
         }
     }
     .feature_img_bound{
-        width: 80%;
-        padding-top: 80%;
+        width: 70%;
+        padding-top: 70%;
         margin: 0 auto;
         // background: linear-gradient(270deg,rgba(68,68,76,0.6),rgba(68,68,76,0.8));
         overflow: hidden;

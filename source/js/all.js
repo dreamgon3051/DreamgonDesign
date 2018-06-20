@@ -1,19 +1,21 @@
 $(document).ready(function(){
     $(document).scroll(function (e) {
         if ($(document).scrollTop() > (window.innerHeight - 50)) {
-            $(".navbar_top").css("background", "rgba(255,255,255,0.85)");
-            $(".navbar_top").css("padding", "10px");
+            // $(".navbar_top").css("background", "rgba(255,255,255,0.85)");
+            // $(".navbar_top").css("padding", "10px");
+            $(".navbar_top").addClass("navbar_scroll");
             $("#navBar .navBrand_logo").css("display","block");
             $("#navBar .navBrand_logoType").css("display", "none");
         }
         else {
-            $(".navbar_top").css("background", "rgba(255,255,255,0)");
-            $(".navbar_top").css("padding", "30px 20px 30px 30px");
+            // $(".navbar_top").css("background", "rgba(255,255,255,0)");
+            // $(".navbar_top").css("padding", "30px 20px 30px 30px");
+            $(".navbar_top").removeClass("navbar_scroll");
             $("#navBar .navBrand_logo").css("display", "none");
             $("#navBar .navBrand_logoType").css("display", "block");
         }
     });
-    $(document).scroll(function (evt) {
+    $(document).scroll(function (e) {
         if ($(document).scrollTop() > 150) {
             $(".bg_color").css("opacity", "0");
         }
@@ -21,18 +23,66 @@ $(document).ready(function(){
             $(".bg_color").css("opacity", "1");
         }
     });
-    $("#svgNavButton").hover(function(){
-        $(".svgNavButton_bar_2").addClass("svgNavButton_hover");
-    },function () {
-        $(".svgNavButton_bar_2").removeClass("svgNavButton_hover");
+    // $("#svgNavButton").hover(function () {
+    //     $(".svgNavButton_bar_1").attr({width: "650",x:"250"});
+    //     $(".svgNavButton_bar_2").attr({width: "650",x:"250"});
+    //     $(".svgNavButton_bar_3").attr({width: "650",x:"250"});
+
+    // },function () {
+    //     $(".svgNavButton_bar_1").attr({width: "550",x:"350"});
+    //     $(".svgNavButton_bar_2").attr({width: "350",x:"550"});
+    //     $(".svgNavButton_bar_3").attr({width: "150",x:"750"});
+    // });
+    var navButtonCount = false ;
+    $("#svgNavButton").on("click",function () {
+        if (!navButtonCount){
+            $(".svgNavButton_bar_1").attr({width: "650",x:"250"});
+            $(".svgNavButton_bar_2").attr({width: "650",x:"250"});
+            $(".svgNavButton_bar_3").attr({width: "650",x:"250"});
+            navButtonCount = true;
+        }
+        else{
+            $(".svgNavButton_bar_1").attr({width: "550",x:"350"});
+            $(".svgNavButton_bar_2").attr({width: "350",x:"550"});
+            $(".svgNavButton_bar_3").attr({width: "150",x:"750"});
+            navButtonCount = false;
+        }
     });
     setTimeout(function () {
-        $("#svgHeroLogo").hover(function () {
-            $(".svgHeroLogo_path").css("transform", "scale(1.1)");
-        }, function () {
-            $(".svgHeroLogo_path").css("transform", "scale(1)");
-        });
-    }, 5000);
+        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        var heroLogoCount = false;
+        if (!isMobile) {
+            $("#svgHeroLogo").hover(function () {
+                $(".svgHeroLogo_path").css("transform", "scale(1.2)");
+                $(".svgHeroLogo_path_L").css("transform", "scale(1.2)");
+                $(".svgHeroLogo_outline").css("transform", "scale(1.1)");
+                $(".svgHeroLogo_outline_2").css("transform", "scale(0.95)");
+            }, function () {
+                $(".svgHeroLogo_path").css("transform", "scale(1)");
+                $(".svgHeroLogo_path_L").css("transform", "scale(1)");
+                $(".svgHeroLogo_outline").css("transform", "scale(1)");
+                $(".svgHeroLogo_outline_2").css("transform", "scale(1)");
+            });
+        }
+        else{
+            $("#svgHeroLogo").on("click", function () {
+                if (!heroLogoCount) {
+                    $(".svgHeroLogo_path").css("transform", "scale(1.2)");
+                    $(".svgHeroLogo_path_L").css("transform", "scale(1.2)");
+                    $(".svgHeroLogo_outline").css("transform", "scale(1.1)");
+                    $(".svgHeroLogo_outline_2").css("transform", "scale(0.95)");
+                    heroLogoCount = true;
+                }
+                else{
+                    $(".svgHeroLogo_path").css("transform", "scale(1)");
+                    $(".svgHeroLogo_path_L").css("transform", "scale(1)");
+                    $(".svgHeroLogo_outline").css("transform", "scale(1)");
+                    $(".svgHeroLogo_outline_2").css("transform", "scale(1)");
+                    heroLogoCount = false;
+                }
+            });
+        }
+    }, 4000);
 });
 
 

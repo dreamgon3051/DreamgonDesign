@@ -61,9 +61,14 @@
 .navbar-nav {
   display: flex;
   flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
-  padding-left: 0;
+  // border: 1px solid red;
+  text-align: right;
+  // margin-top: 10px;
   margin-bottom: 0;
   list-style: none;
+  @include media-breakpoint-down(sm) {
+    margin-top: 10px;
+  }
 
   .nav-link {
     padding-right: 0;
@@ -106,9 +111,11 @@
 
 // Button for toggling the navbar when in its collapsed state
 .navbar-toggler {
-  padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
+  // padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
   // font-size: $navbar-toggler-font-size;
   // line-height: 1;
+  width: 40px;
+  height: 40px;
   padding: 0;
   background-color: transparent; // remove default button style
   border: $border-width solid transparent; // remove default button style

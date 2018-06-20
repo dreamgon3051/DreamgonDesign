@@ -56,21 +56,21 @@ gulp.task('sass', function () {
 
 gulp.task('babel', () => {
     return gulp.src('./source/js/**/*.js')
-        .pipe($.sourcemaps.init())
-        .pipe($.babel({
-            presets: ['env']
-        }))
-        .pipe($.concat('all.js'))
-        .pipe($.if(options.env === 'production', $.uglify({
-            compress:{
-                drop_console: true
-            }
-        })))
-        .pipe($.sourcemaps.write('.'))
-        .pipe(gulp.dest('./public/js'))
-        .pipe(browserSync.reload({
-            stream: true
-        }));
+    .pipe($.sourcemaps.init())
+    .pipe($.babel({
+        presets: ['env']
+    }))
+    .pipe($.concat('all.js'))
+    .pipe($.if(options.env === 'production', $.uglify({
+        compress:{
+            drop_console: true
+        }
+    })))
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest('./public/js'))
+    .pipe(browserSync.reload({
+        stream: true
+    }));
 });
 
 // gulp.task('bower', function () {
