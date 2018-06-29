@@ -12,11 +12,19 @@
     }
     gtag('js', new Date());
     gtag('config', 'UA-121075981-1');
+    gtag('event', 'load_start',
+        { 'event_category': 'loading' });
+    var t0 = performance.now();
   </script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MengLongWu Portfolio">
+  <meta property="og:url" content="https://menglongwu.com">
+  <meta property="og:image" content="https://menglongwu.com/images/img_meta.jpg">
+  <meta property="og:description" content="Take a look at my works :)">
   <title>MengLong Wu</title>
   <!-- icon -->
   <link rel="apple-touch-icon" sizes="180x180" href="./images/others/apple-touch-icon_2.png">
@@ -24,7 +32,7 @@
   <!-- stylesheets -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./stylesheets/all.css">
-  <script src="./js/csi.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,800,900" rel="stylesheet">
   <style>
     @font-face {
       font-family: 'AvenirNext';
@@ -32,12 +40,14 @@
       font-weight: 300;
       font-style: normal;
     }
+
     @font-face {
       font-family: 'AvenirNext';
       src: url('./fonts/AvenirNextLTPro-Thin.otf');
       font-weight: 200;
       font-style: normal;
     }
+
     @font-face {
       font-family: 'AvenirNext';
       src: url('./fonts/AvenirNextLTPro-Regular.otf');
@@ -66,9 +76,6 @@
       font-style: normal;
     }
   </style>
-  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,800,900" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -83,35 +90,40 @@
         <stop offset="70%" stop-color="#FFFFFF" stop-opacity="1" />
       </linearGradient>
       <g>
-        <path class="svgLoadingLogo_path" d="M367.31,544a1,1,0,0,0-1.73,0L278.69,694.5a24,24,0,0,0,20.78,36h67l54.27-94h0Z"/>
-        <path class="svgLoadingLogo_path" d="M871.75,463.78a60,60,0,0,0-50.93-28.28h-87.2a1,1,0,0,0-.5,1.87c7.19,4.13,20.84,12.86,36.2,36.93h0l58.1,100.63a1,1,0,0,0,1.73,0l53.41-92.5S872.11,464.35,871.75,463.78Z"/>
-        <path class="svgLoadingLogo_path" d="M695,465.5a60,60,0,0,0-52-30H555.79a1,1,0,0,0-.49,1.87c7.19,4.13,20.83,12.86,36.2,36.93l59,102.2H757.31a1,1,0,0,0,.87-1.5Z"/>
-        <path class="svgLoadingLogo_path" d="M827.17,694.5l-33.48-58H598.54l-98.72-171a60,60,0,0,0-52-30h-87.2a1,1,0,0,0-.5,1.87c7.19,4.13,20.84,12.86,36.21,36.93L544.27,730.5H806.39A24,24,0,0,0,827.17,694.5Z"/>
+        <path class="svgLoadingLogo_path" d="M367.31,544a1,1,0,0,0-1.73,0L278.69,694.5a24,24,0,0,0,20.78,36h67l54.27-94h0Z" />
+        <path class="svgLoadingLogo_path" d="M871.75,463.78a60,60,0,0,0-50.93-28.28h-87.2a1,1,0,0,0-.5,1.87c7.19,4.13,20.84,12.86,36.2,36.93h0l58.1,100.63a1,1,0,0,0,1.73,0l53.41-92.5S872.11,464.35,871.75,463.78Z"
+        />
+        <path class="svgLoadingLogo_path" d="M695,465.5a60,60,0,0,0-52-30H555.79a1,1,0,0,0-.49,1.87c7.19,4.13,20.83,12.86,36.2,36.93l59,102.2H757.31a1,1,0,0,0,.87-1.5Z"
+        />
+        <path class="svgLoadingLogo_path" d="M827.17,694.5l-33.48-58H598.54l-98.72-171a60,60,0,0,0-52-30h-87.2a1,1,0,0,0-.5,1.87c7.19,4.13,20.84,12.86,36.21,36.93L544.27,730.5H806.39A24,24,0,0,0,827.17,694.5Z"
+        />
       </g>
     </svg>
     <h3 class="loading_wording">Page Loading...</h3>
-    <!-- <p class="experience_wording">Best experience in Google Chrome</p> -->
     <p class="experience_wording">Best experience in &nbsp;
-      <span><i class="fa fa-chrome"></i> Google Chrome</span></p>
+      <span>
+        <i class="fa fa-chrome"></i> Google Chrome</span>
+    </p>
   </div>
   <div id="wholePage">
+    <div class="bg_color"></div>
     <nav id="navBar" class="navbar navbar-expand-md fixed-top navbar-dark navbar_top">
-      <a class="navbar-brand" href="#heroSection">
-        <img class="navBrand_logoType" src="./images/lg_navBrand_wording_2.svg" alt="" style="height: 30px;">      
+      <a id="navBarBrand" class="navbar-brand" href="#heroSection">
+        <img class="navBrand_logoType" src="./images/lg_navBrand_wording.svg" alt="" style="height: 30px;">
         <img class="navBrand_logo" src="./images/lg_navBrand_icon.svg" alt="" style="height: 20px; display: none; vertical-align: center;">
       </a>
-      <div class="navbar-toggler" type="" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      <div id="navBarMenu" class="navbar-toggler" type="" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
         aria-expanded="false" aria-label="Toggle navigation">
         <svg id="svgNavButton" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
           width="40px">
           <defs>
             <linearGradient id="svgNavButton_fill" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#00B4F8" />
-              <stop offset="100%" stop-color="#0074D8" />
+              <stop offset="0%" stop-color="rgb(22, 182, 245)" />
+              <stop offset="100%" stop-color="rgb(22, 80, 250)" />
             </linearGradient>
           </defs>
           <g>
-            <rect class="svgNavButton_bar_1" fill="url(#svgNavButton_fill)" width="600" height="80" x="300" y="200" rx="40" ry="40"/>
+            <rect class="svgNavButton_bar_1" fill="url(#svgNavButton_fill)" width="600" height="80" x="300" y="200" rx="40" ry="40" />
             <rect class="svgNavButton_bar_2" fill="url(#svgNavButton_fill)" width="400" height="80" x="500" y="400" rx="40" ry="40" />
             <rect class="svgNavButton_bar_3" fill="url(#svgNavButton_fill)" width="150" height="80" x="750" y="600" rx="40" ry="40" />
           </g>
@@ -119,37 +131,39 @@
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link mx-2" href="#aboutSection">ABOUT</a>
-          <a class="nav-item nav-link mx-2" href="#projectSection">PROJECT</a>
-          <a class="nav-item nav-link mx-2" href="#contactSection">CONTACT</a>
+          <a id="about" class="nav-item nav-link mx-2" href="#aboutSection">ABOUT</a>
+          <a id="project" class="nav-item nav-link mx-2" href="#projectSection">PROJECT</a>
+          <a id="contact" class="nav-item nav-link mx-2" href="#contactSection">CONTACT</a>
         </div>
       </div>
     </nav>
-    <div class="bg_color"></div>
-    <!-- <div id="wholeRegion"> -->
     <header id="heroSection">
       <div class="heroImg">
         <div class="img_cover"></div>
       </div>
       <div id="heroLogo" class="container hero_logo" style="display: none;">
         <div class="row d-flex justify-content-center" style="height: 100%;">
-          <div class="logo_wrap col-12 col-sm-8 col-md-6 col-lg-4 col-xl-4 d-flex flex-column justify-content-center align-items-center">
+          <div class="logo_wrap col-11 col-sm-8 col-md-5 col-lg-4 col-xl-4 d-flex flex-column justify-content-center align-items-center">
             <svg id="svgHeroLogo" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 1168 1168" width="80%">
-              <linearGradient id="svgHeroLogo_fill" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#00B4F8" />
-                <stop offset="100%" stop-color="#0074D8" />
+              <linearGradient id="svgHeroLogo_fill" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="rgb(22, 182, 245)" />
+                <stop offset="100%" stop-color="rgb(22, 80, 250)" />
               </linearGradient>
               <linearGradient id="svgHeroLogo_fill_2" x1="0%" y1="0%" x2="0%" y2="100%" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.4" />
                 <stop offset="70%" stop-color="#FFFFFF" stop-opacity="1" />
               </linearGradient>
               <g>
-                <polygon class="svgHeroLogo_outline_2" points="583 3.44 81.09 293.22 81.09 872.78 583 1162.56 1084.91 872.78 1084.91 293.22 583 3.44" />
-                <circle class="svgHeroLogo_outline" cx="583" cy="583" r="500" />
+                <polygon class="svgHeroLogo_outline_h" points="583 3.44 81.09 293.22 81.09 872.78 583 1162.56 1084.91 872.78 1084.91 293.22 583 3.44"
+                />
+                <circle class="svgHeroLogo_outline_c" cx="583" cy="583" r="500" />
                 <path class="svgHeroLogo_path" d="M367.31,544a1,1,0,0,0-1.73,0L278.69,694.5a24,24,0,0,0,20.78,36h67l54.27-94h0Z" />
-                <path class="svgHeroLogo_path" d="M871.75,463.78a60,60,0,0,0-50.93-28.28h-87.2a1,1,0,0,0-.5,1.87c7.19,4.13,20.84,12.86,36.2,36.93h0l58.1,100.63a1,1,0,0,0,1.73,0l53.41-92.5S872.11,464.35,871.75,463.78Z"/>
-                <path class="svgHeroLogo_path" d="M695,465.5a60,60,0,0,0-52-30H555.79a1,1,0,0,0-.49,1.87c7.19,4.13,20.83,12.86,36.2,36.93l59,102.2H757.31a1,1,0,0,0,.87-1.5Z"/>
-                <path class="svgHeroLogo_path_L" d="M827.17,694.5l-33.48-58H598.54l-98.72-171a60,60,0,0,0-52-30h-87.2a1,1,0,0,0-.5,1.87c7.19,4.13,20.84,12.86,36.21,36.93L544.27,730.5H806.39A24,24,0,0,0,827.17,694.5Z"/>
+                <path class="svgHeroLogo_path" d="M871.75,463.78a60,60,0,0,0-50.93-28.28h-87.2a1,1,0,0,0-.5,1.87c7.19,4.13,20.84,12.86,36.2,36.93h0l58.1,100.63a1,1,0,0,0,1.73,0l53.41-92.5S872.11,464.35,871.75,463.78Z"
+                />
+                <path class="svgHeroLogo_path" d="M695,465.5a60,60,0,0,0-52-30H555.79a1,1,0,0,0-.49,1.87c7.19,4.13,20.83,12.86,36.2,36.93l59,102.2H757.31a1,1,0,0,0,.87-1.5Z"
+                />
+                <path class="svgHeroLogo_path_L" d="M827.17,694.5l-33.48-58H598.54l-98.72-171a60,60,0,0,0-52-30h-87.2a1,1,0,0,0-.5,1.87c7.19,4.13,20.84,12.86,36.21,36.93L544.27,730.5H806.39A24,24,0,0,0,827.17,694.5Z"
+                />
               </g>
             </svg>
             <div class="heroTitle">
@@ -158,14 +172,39 @@
           </div>
         </div>
       </div>
+      <div id="scrollHexagon" style="display: none;">
+        <svg class="hexagon_fix" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 1168 1168">
+          <g>
+            <polygon points="583 3.44 81.09 293.22 81.09 872.78 583 1162.56 1084.91 872.78 1084.91 293.22 583 3.44" />
+          </g>
+        </svg>
+        <svg class="hexagon" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 1168 1168">
+          <linearGradient id="hexagon_fill_1" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="rgb(22, 182, 245)" />
+            <stop offset="100%" stop-color="rgb(22, 80, 250)" />
+          </linearGradient>
+          <linearGradient id="hexagon_fill_2" x1="0%" y1="0%" x2="0%" y2="100%" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.4" />
+            <stop offset="70%" stop-color="#FFFFFF" stop-opacity="1" />
+          </linearGradient>
+          <g>
+            <polygon points="583 3.44 81.09 293.22 81.09 872.78 583 1162.56 1084.91 872.78 1084.91 293.22 583 3.44" />
+          </g>
+        </svg>
+        <!-- <svg class="hexagon" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 1168 1168">
+          <g>
+            <polygon points="583 3.44 81.09 293.22 81.09 872.78 583 1162.56 1084.91 872.78 1084.91 293.22 583 3.44" />
+          </g>
+        </svg> -->
+      </div>
     </header>
     <section id="aboutSection">
       <div id="selfIntro" class="container">
         <div class="row flex-md-row-reverse">
           <div class="col-md-6 d-flex flex-column justify-content-center">
             <h1 class="intro_title my-4">Hi, I'm MengLong!</h1>
-            <p class="intro_desc mb-5">An experienced Product Designer and aim to become a great Product Manager. I am enthusiastic about software product and leading it to meet the business strategies with comprehensive thought and
-              skills.
+            <p class="intro_desc mb-5">An experienced Product Designer and aim to be a great Product Manager. I am enthusiastic about software product
+              and leading it to meet the business strategies with comprehensive thought and skills.
             </p>
           </div>
           <div class="col-md-6">
@@ -176,21 +215,21 @@
       <svg id="bgSvgAboutProject" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 1280 3000"
         preserveAspectRatio="none">
         <defs>
-          <linearGradient id="bgSvgAboutProject_fill_1" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="objectBoundingBox">
-            <stop offset="0%" stop-color="#0074D8" />
-            <stop offset="100%" stop-color="#00B4F8" />
+          <linearGradient id="bgSvgAboutProject_fill_1" x1="0%" y1="0%" x2="100%" y2="60%" gradientUnits="objectBoundingBox">
+            <stop offset="0%" stop-color="rgb(22, 80, 250)" />
+            <stop offset="100%" stop-color="rgb(22, 182, 245)" />
           </linearGradient>
-          <linearGradient id="bgSvgAboutProject_fill_2" x1="0%" y1="100%" x2="0%" y2="0%" gradientUnits="objectBoundingBox">
-            <stop offset="0%" stop-color="#0074D8" />
-            <stop offset="100%" stop-color="#00B4F8" />
+          <linearGradient id="bgSvgAboutProject_fill_2" x1="0%" y1="100%" x2="100%" y2="80%" gradientUnits="objectBoundingBox">
+            <stop offset="0%" stop-color="rgb(22, 80, 250)" />
+            <stop offset="100%" stop-color="rgb(22, 182, 245)" />
           </linearGradient>
         </defs>
-        <polygon style="fill: url(#bgSvgAboutProject_fill_1);" points="0 0, 0 1600, 1280 1500, 1280 25, 0 0" />
+        <polygon style="fill: url(#bgSvgAboutProject_fill_1);" points="0 0, 0 1600, 1280 1500, 1280 50, 0 0" />
         <polygon style="fill: url(#bgSvgAboutProject_fill_2);" points="0 1500, 0 2900, 1280 3000, 1280 1400, 0 1500" />
       </svg>
       <div id="expertise" class="container">
         <h1 class="section_title">EXPERTISE</h1>
-        <p class="section_description">Let's see what I am good at and what could I do for you.</p>
+        <p class="section_description">Let's see what I am good at and what I could do for you.</p>
         <div class="row">
           <div class="col-md-4 expertise_card_bound">
             <div class="expertise_img_bound">
@@ -203,7 +242,7 @@
               <li>Good at combining the product goal with business strategies.</li>
               <li>Define target audience (TA) with user research.</li>
               <li>Turn abstract concepts into executable items.</li>
-              <li>Execute product optimization with user testing and data analysis (certified of GAIQ).</li>
+              <li>Execute product optimization with user testing and data analysis (certified with GAIQ).</li>
             </ul>
           </div>
           <div class="col-md-4 expertise_card_bound">
@@ -215,7 +254,7 @@
             <ul>
               <li>User-centered design / Data-driven design mindset.</li>
               <li>Familiar with cross-device design principles within Web, Android & iOS App.</li>
-              <li>Experienced in complete design process: from drafting wireframes to prototyping, and finally to the specifications.
+              <li>Experienced in the complete design process: from drafting wireframes to prototyping, and finally to the specifications.
               </li>
             </ul>
           </div>
@@ -226,18 +265,15 @@
             </div>
             <h2 class="pb-3">Front End Development</h2>
             <ul>
-              <li>Use up-to-date front end skills like HTML5, CSS3, JavaScript, JQuery, Sass, Gulp, Booststrap 4.</li>
+              <li>Use up-to-date front-end skills like HTML5, CSS3, JavaScript, JQuery, Sass, Gulp, Bootstrap 4.</li>
               <li>Adapted with various screen size by well responsive design knowledge.</li>
-              <li>Love using pleasant SVG animation & interaction effect to enhence user experience.</li>
+              <li>Love using pleasant SVG animation & interaction effect to enhance user experience.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
     <section id="projectSection">
-      <!-- <svg id="svgProjectBottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 170">
-            <polygon style="fill: white;" points="0 120 0 170 1000 170 1000 0 0 120" />
-          </svg> -->
       <div id="project" class="container">
         <h1 class="section_title text-white">PROJECT</h1>
         <p class="section_description">Here are projects represented my work in details, take a look !</p>
@@ -264,14 +300,387 @@
               <img src="./images/lg_projectSection_applause.png" alt="Applause" class="project_logo_adjust">
               <h2 class="text-center">Applause</h2>
               <p class="text-center see_more">See Details</p>
-              <p class="text-center brief_descript">The well-designed video Ad format aim to attract eye balls and willing attention.</p>
+              <p class="text-center brief_descript">The well-designed video Ad format aims to attract eyeballs and willing attention.</p>
             </div>
           </div>
         </div>
       </div>
-      <div data-include="project_adplay.html"></div>
-      <div data-include="project_applause.html"></div>
-      <div data-include="project_qrCool.html"></div>
+      <div class="modal fade" id="adplay" tabindex="-1" role="dialog" aria-labelledby="adplayLabel" aria-hidden="true">
+        <div class="modal_control">
+          <div class="back d-flex justify-content-center align-items-center align-self-start" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&#10094; BACK</span>
+          </div>
+        </div>
+        <div class="modal-dialog modal_control" role="">
+          <div class="modal-content">
+            <section id="adPlayHero" class="modal_hero">
+              <div class="container-fluid" style="height: 100%;">
+                <div class="row" style="height: 100%;">
+                  <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+                    <img src="./images/project_adplay/lg_adplay.png" alt="" class="modal_hero_brand">
+                    <p class="modal_hero_subtitle">Give it a real trial before download.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <img src="./images/project_adplay/img_hero_horidashi.png" alt="" class="modal_hero_img_1">
+                    <img src="./images/project_adplay/img_hero_adplay.png" alt="" class="modal_hero_img_2">
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section id="adPlayIntro" class="modal_intro modal_section_setting">
+              <div class="container-fluid" style="height: 100%;">
+                <div class="row d-flex justify-content-center" style="height: 100%;">
+                  <div class="col-md-5 d-flex justify-content-center align-items-center">
+                    <img class="vmfive_phone" src="./images/project_adplay/img_intro_phone.png" alt="">
+                    <div class="video_container">
+                      <video width="100%" height="100%" src="" id="video" controls>
+                      </video>
+                    </div>
+                  </div>
+                  <div class="col-md-6 d-flex flex-column justify-content-center context_wrap">
+                    <h3 class="modal_title">What's AdPlay?</h3>
+                    <p class="modal_description">AdPlay brings a great approach to fit users' need before they download Apps. Having trials before the download
+                      is a natural need that every user requires. Via cloud virtualization and streaming technology, we achieved
+                      making users instantly and safely try the native App without any preload.
+                      <span> (See the live-recording video to learn more.)</span>
+                    </p>
+                    <!-- <p class="modal_description">AdPlay is a brand-new advertising format. Unlike traditional Ad(i.e. image or video content), user can try the app before they decide
+                                      to download or even purchase. Therefore, experience the native apps instantly and safely
+                                      without any pre-install is the Core Values of AdPlay.</p> -->
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section id="adPlaySlide" class="modal_slide_show modal_section_setting">
+              <h3 class="modal_title">Showcase</h3>
+              <div class="slide_wrap">
+                <div class="mySlides slide_fade show_beginning" name="slide0">
+                  <img src="./images/project_adplay/img_showcase_yahoo.png" style="width:100%">
+                  <div class="text">Yahoo Game Page (JP)</div>
+                </div>
+                <div class="mySlides slide_fade" name="slide0">
+                  <img src="./images/project_adplay/img_showcase_drBooster.png" style="width:100%">
+                  <div class="text">Dr. Booster (TW)</div>
+                </div>
+                <div class="mySlides slide_fade" name="slide0">
+                  <img src="./images/project_adplay/img_showcase_horidashi.png" style="width:100%">
+                  <div class="text">Horidashi (JP)</div>
+                </div>
+                <div class="mySlides slide_fade" name="slide0">
+                  <img src="./images/project_adplay/img_showcase_abc.png" style="width:100%">
+                  <div class="text">Game Gift (JP)</div>
+                </div>
+                <a class="prev" onclick="moveSlides(-1,0)">&#10094;</a>
+                <a class="next" onclick="moveSlides(1,0)">&#10095;</a>
+              </div>
+              <div class="slide_dots">
+                <span class="dot dot_active" name="dot0" onclick="currentSlide(1,0)"></span>
+                <span class="dot" name="dot0" onclick="currentSlide(2,0)"></span>
+                <span class="dot" name="dot0" onclick="currentSlide(3,0)"></span>
+                <span class="dot" name="dot0" onclick="currentSlide(4,0)"></span>
+              </div>
+            </section>
+            <section id="adPlayPartner" class="modal_partner modal_section_setting">
+              <div class="container-fluid">
+                <h3 class="modal_title">Partnership</h3>
+                <div class="row d-flex justify-content-center">
+                  <div class="col-md-10">
+                    <div class="row">
+                      <div class="col-sm-4 col-6">
+                        <img src="./images/project_adplay/lg_yahoo.png" alt="">
+                      </div>
+                      <div class="col-sm-4 col-6">
+                        <img src="./images/project_adplay/lg_trendmicro.png" alt="">
+                      </div>
+                      <div class="col-sm-4 col-6">
+                        <img src="./images/project_adplay/lg_adways.png" alt="">
+                      </div>
+                      <div class="col-sm-4 col-6">
+                        <img src="./images/project_adplay/lg_abc.png" alt="">
+                      </div>
+                      <div class="col-sm-4 col-6">
+                        <img src="./images/project_adplay/lg_gmobi.png" alt="">
+                      </div>
+                      <div class="col-sm-4 col-6">
+                        <img src="./images/project_adplay/lg_d2cr.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section id="adPlayResponsibility" class="modal_responsibility modal_section_setting">
+              <div class="container-fluid">
+                <div class="context_wrap">
+                  <h3 class="modal_title">Responsibility</h3>
+                  <p class="modal_description">As a design director, my duty covered the entire product development period, which included concept prototyping
+                    and user testing for MVP definition; UI/UX improvement and data analysis for product optimization; Moreover,
+                    executing product and CMS(content management system) planning to satisfy various business clients' needs. By
+                    the way, Web, Android, and iOS SDK solution are also within consideration.</p>
+                </div>
+                <img src="./images/project_adplay/img_useFlow.png" alt="">
+                <h3 class="modal_subtitle">User Flow</h3>
+                <img src="./images/project_adplay/img_flowChart.png" alt="">
+                <h3 class="modal_subtitle">Product Functional Flow Chart</h3>
+                <img src="./images/project_adplay/img_dataAnalysis.png" alt="">
+                <h3 class="modal_subtitle">Data Analysis</h3>
+                <img src="./images/project_adplay/img_cmsPlan.png" alt="">
+                <h3 class="modal_subtitle">CMS planning</h3>
+              </div>
+            </section>
+            <section id="adPlayReview" class="modal_review modal_section_setting">
+              <div class="container-fluid">
+                <div class="context_wrap">
+                  <h3 class="modal_title">Review</h3>
+                  <p class="modal_description">AdPlay is a product powered by VMFive, which was my major duty of creation. I joined product development from
+                    the very beginning. As the only designer from starting, I took the whole things about UI/UX design and product
+                    evolution, that was a very precious and complete experience for me.</p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="applause" tabindex="-1" role="dialog" aria-labelledby="applauseLabel" aria-hidden="true">
+        <div class="modal_control">
+          <div class="back d-flex justify-content-center align-items-center align-self-start" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&#10094; BACK</span>
+          </div>
+        </div>
+        <div class="modal-dialog modal_control" role="">
+          <div class="modal-content">
+            <section id="applauseHero" class="modal_hero">
+              <div class="container-fluid" style="height: 100%;">
+                <div class="row" style="height: 100%;">
+                  <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+                    <img src="./images/project_applause/lg_applause.png" alt="" class="modal_hero_brand">
+                    <p class="modal_hero_subtitle">Creative video Ad solutions.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <img src="./images/project_applause/img_modal_hero_1.png" alt="" class="modal_hero_img_1">
+                    <img src="./images/project_applause/img_modal_hero_2.png" alt="" class="modal_hero_img_2">
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section id="applauseResponsibility" class="modal_responsibility modal_section_setting">
+              <div class="container-fluid">
+                <div class="context_wrap">
+                  <h3 class="modal_title">Responsibility</h3>
+                  <p class="modal_description">My major duty of this project was creating new video formats and formulating well-thought UI spec, making sure
+                    the contents could be adapted to various devices in well-responsive consideration. </p>
+                </div>
+              </div>
+            </section>
+            <section id="applauseCreativeContent" class="modal_creativeContent modal_section_setting">
+              <div class="container-fluid">
+                <h3 class="modal_title">Creative Contents</h3>
+                <img src="./images/project_applause/img_content_flexBanner.jpg" alt="">
+                <h3 class="modal_subtitle">Flexible Video Banner </h3>
+                <img src="./images/project_applause/img_content_nativeCard.jpg" alt="">
+                <h3 class="modal_subtitle">Native Video Card</h3>
+                <img src="./images/project_applause/img_content_interstitial.jpg" alt="">
+                <h3 class="modal_subtitle">Interstitial Video Show</h3>
+              </div>
+            </section>
+            <section id="applauseUiSet" class="modal_uiSet modal_section_setting">
+              <svg id="bgSvgApplause" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 1400 4200"
+                preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="applauseColor" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#2747FF" />
+                    <stop offset="1" stop-color="#8B16CD" />
+                  </linearGradient>
+                </defs>
+                <polygon style="fill: url(#applauseColor); opacity: 0.1;" points="0 200 0 4200 1400 4000 1400 0 0 200" />
+              </svg>
+              <div class="container-fluid">
+                <h3 class="modal_title">UI Set</h3>
+                <img src="./images/project_applause/img_uiSet.png" alt="">
+              </div>
+            </section>
+            <section id="applauseSpec" class="modal_spec modal_img_shadow modal_section_setting">
+              <div class="container-fluid">
+                <h3 class="modal_title">Responsive UI Specification</h3>
+                <img src="./images/project_applause/img_spec_card1.jpg" alt="">
+                <img src="./images/project_applause/img_spec_card2.jpg" alt="">
+                <img src="./images/project_applause/img_spec_card3.jpg" alt="">
+                <img src="./images/project_applause/img_spec_card4.jpg" alt="">
+              </div>
+            </section>
+            <section id="applauseReview" class="modal_review modal_section_setting">
+              <div class="container-fluid">
+                <div class="context_wrap">
+                  <h3 class="modal_title">Review</h3>
+                  <p class="modal_description">There are lots of details I have learned when I created these video Ad formats. For the purpose of satisfying
+                    the Ad SDK's needs, the formats have to fit various devices, different layouts and make it looks like native
+                    contents. As the saying goes, "The devil is in the details.", the most valuable and challenging part is not
+                    how stunning the format is, but how to get the balance between business purpose and beautiful design.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="qrCool" tabindex="-1" role="dialog" aria-labelledby="qrCoolLabel" aria-hidden="true">
+        <div class="modal_control">
+          <div class="back d-flex justify-content-center align-items-center align-self-start" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&#10094; BACK</span>
+          </div>
+        </div>
+        <div class="modal-dialog modal_control" role="">
+          <div class="modal-content">
+            <section id="qrCoolHero" class="modal_hero">
+              <div class="container-fluid" style="height: 100%;">
+                <div class="row" style="height: 100%;">
+                  <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+                    <img src="./images/project_qrCool/lg_qrCool.png" alt="" class="modal_hero_brand">
+                    <p class="modal_hero_subtitle">The most intuitive QR code scanner.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <img src="./images/project_qrCool/img_hero_1.png" alt="" class="modal_hero_img_1">
+                    <img src="./images/project_qrCool/img_hero_2.png" alt="" class="modal_hero_img_2">
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section id="qrCoolSlide" class="modal_slide_show modal_section_setting">
+              <h3 class="modal_title">Why Use QR Cool ?</h3>
+              <div class="container-fluid">
+                <div class="mySlides slide_fade show_beginning" name="slide1">
+                  <div class="row d-flex flex-column justify-content-center align-items-center">
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+                      <img src="./images/project_qrCool/img_slide_1.png" style="width: 100%">
+                    </div>
+                    <div class="text_wrap col-12 col-md-10">
+                      <div class="modal_subtitle">Scan the QR code on your screen?</div>
+                      <p class="modal_description">Come on, don’t take screenshot or even search for another phone!</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="mySlides slide_fade" name="slide1">
+                  <div class="row d-flex flex-column justify-content-center align-items-center">
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+                      <img src="./images/project_qrCool/img_slide_2.png" style="width: 100%">
+                    </div>
+                    <div class="text_wrap col-12 col-md-10">
+                      <div class="modal_subtitle">Intuited Way to Scan</div>
+                      <p class="modal_description">Via QR Cool, you can scan directly from the screen. Just one click!</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="mySlides slide_fade" name="slide1">
+                  <div class="row d-flex flex-column justify-content-center align-items-center">
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+                      <img src="./images/project_qrCool/img_slide_3.png" style="width: 100%">
+                    </div>
+                    <div class="text_wrap col-12 col-md-10">
+                      <div class="modal_subtitle">Multiple QR codes?</div>
+                      <p class="modal_description">Not the problem, we’ll detect automatically for you, just choose one to scan.</p>
+                    </div>
+                  </div>
+                </div>
+                <a class="prev" onclick="moveSlides(-1,1)">&#10094;</a>
+                <a class="next" onclick="moveSlides(1,1)">&#10095;</a>
+              </div>
+              <div class="slide_dots">
+                <span class="dot dot_active" name="dot1" onclick="currentSlide(1,1)"></span>
+                <span class="dot" name="dot1" onclick="currentSlide(2,1)"></span>
+                <span class="dot" name="dot1" onclick="currentSlide(3,1)"></span>
+              </div>
+            </section>
+            <section id="qrCoolFeature" class="modal_feature modal_section_setting">
+              <div class="container-fluid">
+                <h3 class="modal_title">Features</h3>
+                <div class="row d-flex justify-content-center">
+                  <div class="col-md-4">
+                    <div class="feature_img_bound d-flex justify-content-center align-items-center">
+                      <div class="feature_img_shape"></div>
+                      <img src="./images/project_qrCool/img_feature_1.svg" alt="">
+                    </div>
+                    <p class="modal_subtitle">Full compliance with Material Design</p>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="feature_img_bound d-flex justify-content-center align-items-center">
+                      <div class="feature_img_shape"></div>
+                      <img src="./images/project_qrCool/img_feature_2.svg" alt="">
+                    </div>
+                    <p class="modal_subtitle">Intuitive way to scan on the screen</p>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="feature_img_bound d-flex justify-content-center align-items-center">
+                      <div class="feature_img_shape"></div>
+                      <img src="./images/project_qrCool/img_feature_3.svg" alt="">
+                    </div>
+                    <p class="modal_subtitle">Well functionality &
+                      <br>Easy to use</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section id="qrCoolResponsibility" class="modal_responsibility modal_section_setting">
+              <div class="container-fluid">
+                <div class="context_wrap">
+                  <h3 class="modal_title">Responsibility</h3>
+                  <p class="modal_description">In this project, I worked with an excellent Android developer, Richard. I was responsible for whole product planning,
+                    from concept generation, competitive product analysis, product requirement definition to UI implementation.</p>
+                </div>
+              </div>
+            </section>
+            <section id="qrCoolCompetitor" class="modal_img_shadow modal_section_setting">
+              <svg id="bgSvgQrCool" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 1400 4200"
+                preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="bgSvgQrCool_fill" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#00CDC3" />
+                    <stop offset="1" stop-color="#0093D1" />
+                  </linearGradient>
+                </defs>
+                <polygon style="fill: url(#bgSvgQrCool_fill); opacity: 0.1;" points="0 200 0 4200 1400 4000 1400 0 0 200" />
+              </svg>
+              <div class="container-fluid">
+                <h3 class="modal_title">Competitive Product Analysis</h3>
+                <p class="modal_description my-5">Since QR code scanner Applications are well known and in Red Ocean Market. For standing out our unique features,
+                  I did the survey of the scanner Apps which have a huge amount of downloads in the app store, helping us to define
+                  functions we want to achieve in the first version.</p>
+                <img src="./images/project_qrCool/img_competitor.jpg" alt="" style="width:100%;">
+                <!-- <h3 class="modal_subtitle">Flexible Video Banner </h3> -->
+              </div>
+            </section>
+            <section id="qrCoolFlowChart" class="modal_img_shadow modal_section_setting">
+              <div class="container-fluid">
+                <h3 class="modal_title">Product Functions Planning</h3>
+                <p class="modal_description my-5">After doing product research and competitor analysis, We converged functions to the number which are essential
+                  and could afford to be implemented.</p>
+                <img src="./images/project_qrCool/img_flowChart.jpg" alt="" style="width:100%;">
+                <!-- <h3 class="modal_subtitle">Flexible Video Banner </h3> -->
+              </div>
+            </section>
+            <section id="qrCoolUI" class="modal_img_shadow modal_section_setting">
+              <div class="container-fluid">
+                <h3 class="modal_title">User Flow & UI Implementation</h3>
+                <p class="modal_description my-5">The UI design fully complies with Google Material Design guidelines, that's because we want to lower the user learning
+                  curve and make it feel just like native App. Fast, easy and intuitive are our core values of the product position.</p>
+                <img src="./images/project_qrCool/img_userFlow.jpg" alt="" style="width:100%;">
+                <!-- <h3 class="modal_subtitle">Flexible Video Banner </h3> -->
+              </div>
+            </section>
+            <section id="qrCoolReview" class="modal_review modal_section_setting">
+              <div class="container-fluid">
+                <div class="context_wrap">
+                  <h3 class="modal_title">Review</h3>
+                  <p class="modal_description">QR Cool is a mobile app for Android, which can easily use the floating button to scan the QR codes on the phone
+                    screen. The concept came out with the confusing situation when we wanted to scan the QR code within an image
+                    that just shown on the mobile device but didn't know how to do that. Thus we decided to solve this problem
+                    with a more intuitive and user-friendly way.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
     </section>
     <footer id="contactSection">
       <svg id="svgContactTop" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 1000 250"
@@ -282,38 +691,22 @@
         <h1 class="section_title">CONTACT</h1>
         <div class="contact_info d-flex flex-column justify-content-center align-items-center">
           <div class="social_link">
-            <a href="https://www.instagram.com/dreamgon/" target="_blank">
-              <i class="fa fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/menglongwu" target="_blank">
+            <a id="linkedin" href="https://www.linkedin.com/in/menglongwu" target="_blank">
               <i class="fa fa-linkedin-square"></i>
             </a>
+            <a id="instagram" href="https://www.instagram.com/dreamgon/" target="_blank">
+              <i class="fa fa-instagram"></i>
+            </a>
           </div>
-          <div class="phone my-2">Phone: +886921660930</div>
-          <div class="mail my-2">Mail: menglongwu.design@gmail.com</div>
+          <!-- <div class="phone my-2">Phone:</div> -->
+          <a id="mail" class="mail my-3" href="mailto:menglongwu.design@gmail.com">menglongwu.design@gmail.com</a>
         </div>
         <small class="copyright">©2018 Crafted with heart by MengLong Wu.</small>
       </div>
     </footer>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-      crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-      crossorigin="anonymous"></script> -->
   </div>
 </body>
 <script type="text/javascript" src="./js/vendor.js"></script>
 <script type="text/javascript" src="./js/all.js"></script>
 <script type="text/javascript" src="./js/skrollr.min.js"></script>
-<!-- <script type="text/javascript">
-  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  console.log(isMobile);
-  if (!isMobile) {
-    var s = skrollr.init();
-  }
-</script> -->
-
 </html>

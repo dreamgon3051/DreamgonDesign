@@ -9,7 +9,6 @@
 @import "project";
 @import "components/modal";
 @import "components/navbar";
-//import的順序有關？
 
 @import "root";
 @import "print";
@@ -45,14 +44,9 @@
 // @import "carousel";
 @import "utilities";
 
-// #wholePage {
-//     position: relative;
-// }
 // loading animation-------------
 #loadingAnimation.loading_container{
-    font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    // border: 0.6rem solid #00B4F8;
- 
+    font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
     margin: 0.6rem;
     height: calc(100vh - 1.2rem);
     width: calc(100% - 1.2rem);
@@ -62,16 +56,11 @@
         width: calc(100% - 1.5rem);
     }
     position: fixed;
-    // width: 100%;
-    // height: 100vh;
-    // top: 0;
-    // left: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(160deg,rgba(65,65,65,1),rgba(30,30,30,1));
-    transition: 3s;
+    background: linear-gradient(to bottom,rgb(42,42,42),rgb(32,32,32));
     z-index: 99999;
     .loading_logo{
         width: 100px;
@@ -79,8 +68,6 @@
         animation: spin 4s ease-in-out infinite;
     }
     .loading_wording{
-        // border: 1px solid green;
-        // margin-top: 5px;
         padding-left: 5px;
         font-size: 0.9rem;
         letter-spacing: 0.4px;
@@ -89,8 +76,6 @@
         animation: blink 2s infinite;
     }
     .experience_wording{
-        // border: 1px solid red;
-        // width: 100%;
         position: absolute;
         text-align: center;
         bottom: 15%;
@@ -101,7 +86,7 @@
         font-weight: 200;
         color: #888;
         i{
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
     }
 }
@@ -147,7 +132,4 @@
 }
 .svgLoadingLogo_path {
     fill: url(#svgLoadingLogo_fill_2);
-    // fill-opacity: 0;
-    stroke: url(#svgLoadingLogo_fill_2);
-    stroke-width: 2;
 }
